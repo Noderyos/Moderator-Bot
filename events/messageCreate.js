@@ -3,9 +3,15 @@
  */
 const client = require("../index");
 const { GatewayIntentBits, PermissionFlagsBits, Client } = require("discord.js");
-const { console, prisma } = client;
+const GREETING_WORDS = process.env.GREETING_WORDS.split(",");
+const GREETING_REACTION_EMOJI = process.env.GREETING_REACTION_EMOJI
 
 client.on("messageCreate", async (message) => {
+
+    // Greeting manager
+    if (GREETING_WORDS.some((word) => message.content.toLowerCase().includes(word))) {
+        GreetingReaction(message);
+    }
 
     // Token in message manager
     const tokens = message.content.match(/[a-z,0-9,\_,\-]{24}\.[a-z,0-9,\_,\-]{6}\.[a-z,0-9,\_,\-]{38}/gmi);
@@ -72,4 +78,12 @@ async function TicketManager(message) {
             data: { lastActivity: new Date() }
         });
     }
+}
+
+/**
+ * React to greeting messages
+ * @param {Message} message Message sent
+ */
+async function GreetingReaction(message) {
+    await message.react(GREETING_REACTION_EMOJI);
 }
