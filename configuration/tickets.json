@@ -2,8 +2,6 @@
     "ticketPanelChannel": "1085574339128201256",
     "ticketCategory": "1335021918566350939",
     "staffRoles": ["1085569386573733978"],
-    "logsChannel": "1085574586051080242",
-    "maxTicketsPerUser": 5,
     "panelConfig": {
         "title": "Contacter le staff",
         "description": "Ouvrez un ticket pour toute demande concernant le serveur (Partenariat, litige avec un autre membre, litige avec un membre du staff, etc...)",
@@ -34,4 +32,4 @@
             "buttonStyle": "Danger"
         }
     }
-  }
+}

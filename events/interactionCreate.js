@@ -156,16 +156,7 @@ function ButtonHandler(interaction) {
  * @param {StringSelectMenuInteraction} interaction The select interaction 
  */
 function SelectHandler(interaction) {
-    let select_name;
-    const { customId } = interaction;
-    if (customId.startsWith("ticket")) {
-        select_name = customId.split("-");
-        interaction.ticketId = select_name.pop();
-        select_name = select_name.join("-");
-    } else {
-        button_name = customId;
-    }
-
+    const select_name = customId;
     const select = client.commandsFiles.get(select_name);
     if (select) select.run(client, interaction);
 
