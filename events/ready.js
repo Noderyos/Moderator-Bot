@@ -2,7 +2,7 @@
  * author: Mizari (Mizari-Dev)
  */
 const client = require("../index");
-const { console, prisma } = client;
+const { console } = client;
 const {
    ActivityType,
    EmbedBuilder,
