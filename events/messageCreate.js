@@ -3,12 +3,13 @@
  */
 const client = require("../index");
 const { GatewayIntentBits, PermissionFlagsBits, Client } = require("discord.js");
+const { console, prisma } = client;
 const GREETING_WORDS = process.env.GREETING_WORDS.split(",");
 const GREETING_REACTION_EMOJI = process.env.GREETING_REACTION_EMOJI
 
 client.on("messageCreate", async (message) => {
 
-    // Greeting manager
+    // Greeting reaction
     if (GREETING_WORDS.some((word) => message.content.toLowerCase().includes(word))) {
         GreetingReaction(message);
     }
