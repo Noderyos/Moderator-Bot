@@ -14,7 +14,6 @@ const ticketConfig = require('../configuration/tickets.json');
 
 client.on("ready", async () => {
     Init();
-
     TicketInit();
 });
 
@@ -66,19 +65,5 @@ async function TicketInit() {
 
     } catch (error) {
         client.console.error('Erreur initialisation panel tickets:', error);
-    }
-
-    try {
-        const tickets = await client.prisma.ticket.findMany({
-            where: {
-                OR: [
-                    { status: 'open' },
-                    { status: 'claimed' }
-                ]
-            }
-        });
-        client.console.info(`Loaded ${tickets.length} active tickets from DB.`);
-    } catch (err) {
-        client.console.error('Error loading tickets:', err);
     }
 }
