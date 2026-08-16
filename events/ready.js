@@ -12,7 +12,7 @@ const {
 } = require("discord.js");
 const ticketConfig = require('../configuration/tickets.json');
 
-client.on("ready", async () => {
+client.on("clientReady", async () => {
     Init();
     TicketInit();
 });
