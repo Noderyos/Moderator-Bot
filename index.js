@@ -9,7 +9,7 @@ const {
 } = require("@discordjs/ws");
 const { WebhookConsole } = require("discord-webhook-console");
 // To show the bot on mobile :D (method from : https://stackoverflow.com/a/77072376)
-identifyProperties.browser = "Discord Android";
+identifyProperties.browser = "Discord VR";
 
 // Discord app
 let client = new Client({
