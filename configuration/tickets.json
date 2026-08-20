@@ -19,8 +19,8 @@
             "buttonStyle": "Primary"
         },
         "partner": {
-            "name": "Demande de partenariat",
-            "description": "Nous sommes ouvert aux partenariats (pas d'échange de pub s'il vous plait)",
+            "name": "Nous sponsoriser",
+            "description": "Mettez en avant votre projet sur notre communauté en nous sponsorisant.",
             "emoji": "<:aide:1165453984425840781>",
             "color": "#89b4fa",
             "buttonStyle": "Secondary"
