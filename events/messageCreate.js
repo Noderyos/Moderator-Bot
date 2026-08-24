@@ -4,8 +4,16 @@
 const client = require("../index");
 const { GatewayIntentBits, PermissionFlagsBits, Client } = require("discord.js");
 const { console } = client;
+const GREETING_WORDS = process.env.GREETING_WORDS.split(",");
+const GREETING_REACTION_EMOJI = process.env.GREETING_REACTION_EMOJI
 
 client.on("messageCreate", async (message) => {
+
+    // Greeting reaction
+    if (GREETING_WORDS.some((word) => message.content.toLowerCase().includes(word))) {
+        GreetingReaction(message);
+    }
+
     // Token in message manager
     const tokens = message.content.match(/[a-z,0-9,\_,\-]{24}\.[a-z,0-9,\_,\-]{6}\.[a-z,0-9,\_,\-]{38}/gmi);
     if (tokens !== null) {
@@ -47,4 +55,12 @@ function TokenDetector(tokens) {
             tmpclient.destroy();
         });
     });
+}
+
+/**
+ * React to greeting messages
+ * @param {Message} message Message sent
+ */
+async function GreetingReaction(message) {
+    await message.react(GREETING_REACTION_EMOJI);
 }
