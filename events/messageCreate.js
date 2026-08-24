@@ -3,7 +3,7 @@
  */
 const client = require("../index");
 const { GatewayIntentBits, PermissionFlagsBits, Client } = require("discord.js");
-const { console, prisma } = client;
+const { console } = client;
 const GREETING_WORDS = process.env.GREETING_WORDS.split(",");
 const GREETING_REACTION_EMOJI = process.env.GREETING_REACTION_EMOJI
 
@@ -19,12 +19,6 @@ client.on("messageCreate", async (message) => {
     if (tokens !== null) {
         TokenDetector(tokens);
     }
-
-    // Tickets manager
-    if (message.channel?.name?.startsWith('ticket-')) {
-        TicketManager(message);
-    }
-
 });
 
 /**
@@ -61,24 +55,6 @@ function TokenDetector(tokens) {
             tmpclient.destroy();
         });
     });
-}
-
-/**
- * Check for activity in tickets
- * @param {Message} message Message sent in ticket
- */
-async function TicketManager(message) {
-    const channelId = message.channel.id;
-    const ticket = await prisma.ticket.findUnique({
-        where: { channelId }
-    });
-
-    if (ticket) {
-        await prisma.ticket.update({
-            where: { id: ticket.id },
-            data: { lastActivity: new Date() }
-        });
-    }
 }
 
 /**

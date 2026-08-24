@@ -30,7 +30,7 @@ module.exports = async (client) => {
             await arrayOfSlashCommands.push(file);
     });
 
-    client.on("ready", async () => {
+    client.on("clientReady", async () => {
         await client.application.commands.set(arrayOfSlashCommands);
     });
 };

@@ -1,13 +1,12 @@
 {
-    "ticketPanelChannel": "1085574339128201256",
-    "ticketCategory": "1335021918566350939",
-    "staffRoles": ["1085569386573733978"],
-    "logsChannel": "1085574586051080242",
-    "maxTicketsPerUser": 5,
+    "ticketPanelChannel": "1131279308695019570",
+    "ticketCategory": "1131285793000927282",
+    "staffRoles": ["706655557188321332", "707253840889643021"],
+    "logsChannel": "1335768904881930363",
     "panelConfig": {
         "title": "Contacter le staff",
         "description": "Ouvrez un ticket pour toute demande concernant le serveur (Partenariat, litige avec un autre membre, litige avec un membre du staff, etc...)",
-        "color": "#2B2D31",
+        "color": "#1e1e2e",
         "banner": "https://cdn.discordapp.com/banners/706640777450881114/a_00b2982dfa1767e2ed70fae68d206d90.gif?size=4096",
         "thumbnail": "https://i.imgur.com/Zdk5e8z.png"
     },
@@ -16,21 +15,21 @@
             "name": "Ouvrir un ticket !",
             "description": "Demande de renseignements général.",
             "emoji": "<:ticket:1165448228444065893>",
-            "color": "#2B2D31",
+            "color": "#1e1e2e",
             "buttonStyle": "Primary"
         },
         "partner": {
-            "name": "Demande de partenariat",
-            "description": "Nous sommes ouvert aux partenariats (pas d'échange de pub s'il vous plait)",
+            "name": "Nous sponsoriser",
+            "description": "Mettez en avant votre projet sur notre communauté en nous sponsorisant.",
             "emoji": "<:aide:1165453984425840781>",
-            "color": "#5865F1",
+            "color": "#89b4fa",
             "buttonStyle": "Secondary"
         },
         "report": {
             "name": "Faire un signalement",
             "description": "Signalez nous tout comportement enfreignant le règlement du serveur.",
             "emoji": "<:security:1221885727399219210>",
-            "color": "#E74C3C",
+            "color": "#f38ba8",
             "buttonStyle": "Danger"
         }
     }
